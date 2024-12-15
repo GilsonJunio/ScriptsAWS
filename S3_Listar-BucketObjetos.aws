@@ -1,0 +1,8 @@
+#!/bin/bash
+profile=""
+bucket=""
+
+read -p "Quem executa este comando?: " profile
+read -p "Qual o nome do bucket alvo?: " bucket
+
+aws s3api list-objects --profile ${profile} --bucket ${bucket}

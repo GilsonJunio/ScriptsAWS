@@ -1,0 +1,8 @@
+#!/bin/bash
+profile=""
+userName=""
+
+read -p "Quem executa este comando?: " profile
+read -p "Qual o usuário IAM alvo?: " userName
+
+aws iam create-access-key --profile ${profile} --user-name ${userName}

@@ -1,0 +1,8 @@
+#!/bin/bash
+profile=""
+userName=""
+
+read -p "Quem executa este comando?: " profile
+read -p "Informe o usuário IAM alvo: " userName
+
+aws iam list-user-policies --profile ${profile} --user-name ${userName}

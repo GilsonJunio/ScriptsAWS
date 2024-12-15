@@ -1,0 +1,2 @@
+#!/bin/bash
+aws apigateway get-usage-plans

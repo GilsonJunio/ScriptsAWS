@@ -1,0 +1,5 @@
+#!/bin/bash
+profile=""
+read -p "Quem executa este comando?: " profile
+
+aws s3api list-buckets --profile ${profile}

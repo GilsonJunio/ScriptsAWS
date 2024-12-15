@@ -1,0 +1,12 @@
+#!/bin/bash
+profile=""
+userName=""
+caminhoDoArquivo=""
+nomeDaPolicy=""
+
+read -p "Quem executa este comando?: " profile
+read -p "Qual o usuário IAM alvo?: " userName
+read -p "Qual o nome da policy?: " policyName
+read -p "Qual o caminho da arquivo?" caminhoDoArquivo
+
+aws iam put-user-policy --profile ${profile} --user-name ${userName} --policy-name ${nomeDaPolicy} --policy-document file://${caminhoDoArquivo}

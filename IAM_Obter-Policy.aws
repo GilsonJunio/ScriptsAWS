@@ -1,0 +1,10 @@
+#!/bin/bash
+profile=""
+userName=""
+policyName=""
+
+read -p "Quem executa este comando?: " profile
+read -p "Qual o usuário IAM alvo?: " userName
+read -p "Qual policy você deseja ver?: " policyName
+
+aws iam get-user-policy --profile ${profile} --user-name ${userName} --policy-name ${policyName}

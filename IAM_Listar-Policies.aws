@@ -1,0 +1,6 @@
+#!/bin/bash
+profile=""
+
+read -p "Informe o usuário: " profile
+
+aws iam list-policies --profile ${profile}
