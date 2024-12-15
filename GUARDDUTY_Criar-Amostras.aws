@@ -1,0 +1,8 @@
+#!/bin/bash
+~/ComandosAWS/GUARDDUTY_Listar-Detectors.aws
+profile=""
+detectorId=""
+
+read -p "Quem está executando este comando?: " profile
+read -p "Qual o ID do detector desejado?: " detectorId
+aws guardduty create-sample-findings --profile ${profile}  --detector-id ${detectorId}

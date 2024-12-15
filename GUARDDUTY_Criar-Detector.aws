@@ -1,0 +1,5 @@
+#!/bin/bash
+profile=""
+
+read -p "Informe o usuário: " profile
+aws guardduty create-detector --profile ${profile} --enable >> ~/GuardDutyIDS

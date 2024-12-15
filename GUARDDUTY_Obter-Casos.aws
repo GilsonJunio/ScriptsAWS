@@ -1,0 +1,10 @@
+#!/bin/bash
+profile=""
+detectorId=""
+casosIds=""
+
+read -p "Quem está executando este comando?: " profile
+read -p "Qual o ID do detector desejado?: " detectorId
+read -p "Qual o ID dos casos desejados?: " casosIds
+
+aws guardduty get-findings --profile ${profile} --detector-id ${detectorId} --finding-ids ${casosIds}
