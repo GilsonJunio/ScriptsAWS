@@ -1,2 +1,6 @@
 #!/bin/bash
-aws lambda list-functions
+profile=""
+
+read -p "Quem executa este comando?: " profile
+
+aws lambda list-functions --profile ${profile}
