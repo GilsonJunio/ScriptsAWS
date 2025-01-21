@@ -1,0 +1,9 @@
+#!/bin/bash
+profile=""
+id=""
+
+echo "Quem executa este comando?: "
+read -e -r profile
+echo "Informe o ID da API REST: "
+read -e -r id
+aws apigateway --profile ${profile} get-rest-api --rest-api-id ${id}

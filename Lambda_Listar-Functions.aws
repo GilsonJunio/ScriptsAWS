@@ -1,6 +1,7 @@
 #!/bin/bash
 profile=""
 
-read -p "Quem executa este comando?: " profile
+echo "Quem executa este comando?: "
+read -e -r profile
 
 aws lambda list-functions --profile ${profile}

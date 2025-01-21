@@ -3,8 +3,13 @@ profile=""
 userName=""
 policyName=""
 
-read -p "Quem executa este comando?: " profile
-read -p "Qual o usuário IAM alvo?: " userName
-read -p "Qual policy você deseja ver?: " policyName
+echo "Quem executa este comando? "
+read -e -r profile
+
+echo "Qual o usuário IAM alvo? "
+read -e -r userName
+
+echo "Qual policy você deseja ver? "
+read -e -r policyName
 
 aws iam get-user-policy --profile ${profile} --user-name ${userName} --policy-name ${policyName}

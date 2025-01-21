@@ -1,10 +1,17 @@
 #!/bin/bash
+# Esse script só aceita um caso por vez
+# Preciso aprender a como adicionar multiplos casos
 profile=""
 detectorId=""
 casosIds=""
 
-read -p "Quem está executando este comando?: " profile
-read -p "Qual o ID do detector desejado?: " detectorId
-read -p "Qual o ID dos casos desejados?: " casosIds
+echo "Quem está executando este comando?: "
+read -e -r  profile
+
+echo "Qual o ID do detector desejado?: "
+read -e -r  detectorId
+
+echo "Qual o ID dos casos desejados?: "
+read -e -r  casosIds
 
 aws guardduty get-findings --profile ${profile} --detector-id ${detectorId} --finding-ids ${casosIds}

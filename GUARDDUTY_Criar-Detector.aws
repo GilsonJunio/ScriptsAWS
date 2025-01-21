@@ -1,5 +1,8 @@
 #!/bin/bash
 profile=""
 
-read -p "Informe o usuário: " profile
+echo "Quem executa este comando?\\n "
+read -e -r profile
+
 aws guardduty create-detector --profile ${profile} --enable >> ~/GuardDutyIDS
+echo "\\n Detector criado! "

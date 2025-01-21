@@ -1,6 +1,7 @@
 #!/bin/bash
 profile=""
 bucket=""
+key=""
 
 echo "Quem executa este comando?: "
 read -e -r profile
@@ -8,4 +9,7 @@ read -e -r profile
 echo "Qual o nome do bucket alvo?: "
 read -e -r bucket
 
-aws s3api list-objects --profile ${profile} --bucket ${bucket}
+echo "Qual o nome do objeto alvo?: "
+read -e -r key
+
+aws s3api get-object --profile ${profile} --bucket ${bucket} --key ${key}

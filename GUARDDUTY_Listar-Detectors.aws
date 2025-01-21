@@ -1,1 +1,7 @@
-aws guardduty list-detectors --profile SecOpsUserGilson
+#!/bin/bash
+profile=""
+
+echo "Quem executa este comando?"
+read -e -r  profile
+
+aws guardduty list-detectors --profile ${profile}

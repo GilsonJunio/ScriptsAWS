@@ -4,9 +4,16 @@ userName=""
 caminhoDoArquivo=""
 nomeDaPolicy=""
 
-read -p "Quem executa este comando?: " profile
-read -p "Qual o usuário IAM alvo?: " userName
-read -p "Qual o nome da policy?: " nomeDaPolicy
-read -p "Qual o caminho da arquivo?" caminhoDoArquivo
+echo "Quem executa este comando?: "
+read -e -r profile
+
+echo "Qual o usuário IAM alvo?: "
+read -e -r userName
+
+echo "Qual o nome da policy?: "
+read -e -r nomeDaPolicy
+
+echo "Qual o caminho do arquivo?"
+read -e -r caminhoDoArquivo
 
 aws iam put-user-policy --profile ${profile} --user-name ${userName} --policy-name ${nomeDaPolicy} --policy-document file://${caminhoDoArquivo}

@@ -1,6 +1,7 @@
 #!/bin/bash
 profile=""
 
-read -p "Informe o usuário: " profile
+echo "Informe o usuário: "
+read -e -r profile
 
 aws iam list-policies --profile ${profile}

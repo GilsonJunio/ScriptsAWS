@@ -1,0 +1,11 @@
+#!/bin/bash
+profile=""
+function=""
+
+echo "Quem executa este comando? "
+read -e -r  profile
+
+echo "Informe a função: "
+read -e -r  function
+aws lambda --profile ${profile} get-function --function-name ${function}
+

@@ -2,9 +2,10 @@
 profile=""
 bucket=""
 
-read -p "Quem executa este comando?: " profile
-read -p "Qual o nome do bucket alvo?: " bucket
+echo "Quem executa este comando?: "
+read -e -r  profile
 
-
+echo "Qual o nome do bucket alvo?: "
+read -e -r  bucket
 
 aws s3api get-bucket-policy --profile ${profile} --bucket ${bucket}

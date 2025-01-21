@@ -3,6 +3,10 @@
 profile=""
 detectorId=""
 
-read -p "Quem está executando este comando?: " profile
-read -p "Qual o ID do detector desejado?: " detectorId
+echo "Quem está executando este comando?: "
+read -e -r profile
+
+echo "Qual o ID do detector desejado?: "
+read -e -r detectorId
+
 aws guardduty create-sample-findings --profile ${profile}  --detector-id ${detectorId}
