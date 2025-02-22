@@ -1,0 +1,25 @@
+#!/bin/bash
+profile=""
+region=""
+availability_zone=""
+instance_id=""
+ssh_public_key=""
+
+echo "Quem executa este comando?: "
+read -e -r profile
+echo "Qual a região?"
+read -e -r region
+echo "Qual zona de disponibilidade?"
+read -e -r availability_zone
+echo "Qual o ID da instância à conectar?"
+read -e -r instance_id
+echo "Qual o caminho da chave pública?"
+read -e -r ssh_public_key
+
+aws ec2-instance-connect send-ssh-public-key \
+	--profile ${profile} \
+    --region ${region} \
+    --availability-zone ${availability_zone} \
+    --instance-id ${instance_id} \
+    --instance-os-user ec2-user \
+    --ssh-public-key ${ssh_public_key}
