@@ -1,1 +1,11 @@
+#!/bin/bash
+profile=""
+instance_id=""
+
+echo "Quem executa este comando?: "
+read -e -r profile
+echo "Qual(is) instância(s) iniciar?: "
+read -e -r instance_id
+
+aws ec2 start-instances --profile ${profile} --instance-ids ${instance_id}
 
